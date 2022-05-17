@@ -81,5 +81,46 @@ ITEM_TYPE_TARGET=6              # target item
 ITEM_TYPE_PROGRAM=8             # program item (made using the GUI)
 ITEM_TYPE_PROGRAM_PYTHON=10     # Python program or macro
 ```
-If all targets are exisiting in the station, then robot moves will be simple. 
+If all targets are exisiting in the station, then robot moves will be simple:
+```
+MoveL(target)                   # linear move
+MoveJ(target)                   # joint move
+```
+
+Each fiducial marker is assigned as a class of type measure_class() such as the following code:
+```
+marker1 = measure_class.measure(0,0,0,0)    # arguments are marker id, x pos, y pos, z pos
+```
+In order measure the function 'measure()' is called within the measure_class() class.
+
+```
+marker1.measuring(marker_size, calib_path, camera_matrix, camera_distortion)
+cv2.destroyAllWindows()
+```
+The x, y, z coordinates are then saved to a variable to be accessed later. 
+
+In order to complete the last transformation to the target source, the known distance between the marker reference frame (corner of marker) and the target must be known. The following transformations can be completed like so:
+
+```
+# Set Items
+robot = RDK.Item('UR5e', ITEM_TYPE_ROBOT)
+O1M1 = RDK.Item('O1-M1', ITEM_TYPE_TARGET)
+# Define xyz list
+O1_M1_xyz = list()
+# Define position vector of target (x-ray or specimen) with respect to the marker
+O1M1_Xray = (73, -140.5, 161.00)
+
+# Main Code
+robot.MoveL(O1M1) # Move to target
+TCP = robot.Pose() # Retrieve TCP of robot. Ensure that the correct TCP is selected 
+O1_M1.measuring(marker_size, calib_path, camera_matrix, camera_distortion) #Begin Measuring
+cv2.destroyAllWindows() # Close all viewing windows
+# x y z coordinates of frame with respect to camera
+O1_M1_xyz.append(-O1_M1.x) 
+O1_M1_xyz.append(O1_M1.y)
+O1_M1_xyz.append(O1_M1.z)
+# transformations with respect to robot base
+O1M1_Base = TCP*transl(O1_M1_xyz) # Marker with respect to base
+O1_X1 = O1M1_Base*transl(O1M1_Xray) # Target with respect to base
+```
 There are several python examples with RoboDK [here](https://robodk.com/doc/en/PythonAPI/index.html). 
