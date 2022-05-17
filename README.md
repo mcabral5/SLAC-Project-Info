@@ -58,3 +58,28 @@ It is recommended to move the camera matrix and distortion matrix into a separat
 
 ##### Example of [CameraDistortion File](https://github.com/mcabral5/SLAC-Project-Info/blob/main/cameraDistortion.txt). Example of [CameraMatrix](https://github.com/mcabral5/SLAC-Project-Info/blob/main/cameraMatrix.txt)
 
+### 3. ArUco Marker Measurements
+Marker measurements are done inside the RoboDK script, however it is important to note the size of the marker. Insert the size of the marker in mm as the 'actual_size' variable in the roboDk python script. 
+
+Two sets of marker measurements are provided. The first is the xyz rpy of the marker with respect to the camera frame. The second set is derived from the marker's eurler angles to get the camera's position with respect to the marker frame. This is the set of coordinates use in the transformation to get the marker's xyz coordinates with respect to the robot base. In order to properly utilize these measurements in the transformation, the x coordinate of the camera with respect to the marker must be flipped to retrieve the marker's position with repsect to the camera. So, from the displayed coordinates, the coordinates of interest are the third from the top 'Camera Position'. 
+
+### 4. RoboDK Station
+RoboDK is a very user-friendly robot software that is used to accurately place various robot target positions throughout a 3D space. In order to fully utilize this project, all objects must be percisly placed inside of a RoboDK station as they are in the physical world. Any deviation will result in inaccurate results. RoboDK has some excellent documentation for beginning with the program [here](https://www.youtube.com/c/RoboDK3D/playlists).
+
+For ease of the user, it is benificial to import all fiducial markers to roboDK and create the targets in the area. This way, simulated programs can be run to view the robot's path without running the actual python script. Creating targets prior to the python script will also make the robot movements simpiler as well. 
+
+### 5. RoboDK Python
+In order to run a python script with robodk, add a python script and edit it inside robodk. All items in the RoboDK station can be defined using the following code, depending on item type ([Source](https://robodk.com/doc/en/PythonAPI/robodk.html#robolink-py)):
+
+```
+ITEM_TYPE_STATION=1             # station item (.rdk files)
+ITEM_TYPE_ROBOT=2               # robot item (.robot files)
+ITEM_TYPE_FRAME=3               # reference frame item
+ITEM_TYPE_TOOL=4                # tool item (.tool files or tools without geometry)
+ITEM_TYPE_OBJECT=5              # object item (.stl, .step, .iges, ...)
+ITEM_TYPE_TARGET=6              # target item
+ITEM_TYPE_PROGRAM=8             # program item (made using the GUI)
+ITEM_TYPE_PROGRAM_PYTHON=10     # Python program or macro
+```
+If all targets are exisiting in the station, then robot moves will be simple. 
+There are several python examples with RoboDK [here](https://robodk.com/doc/en/PythonAPI/index.html). 
