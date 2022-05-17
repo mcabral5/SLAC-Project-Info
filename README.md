@@ -56,3 +56,5 @@ Once the code is ran, the captured images will be shown on the screen with calib
 After calibration is complete, the camera matrix and distortion matrix will be shown and saved as text files, a bad image will be reimaged and stored as calib result, and the calibration error will be shown. Calibration error should be as low as possible. 
 It is recommended to move the camera matrix and distortion matrix into a separate folder so that it will not be accidentally deleted. Once completed, copy and paste both the camera and distortion matrices to the main folder 'Mako Camera Code' so that they can be accessed when using the measurement code.
 
+##### Example of [CameraDistortion File](https://github.com/mcabral5/SLAC-Project-Info/blob/main/cameraDistortion.txt). Example of [CameraMatrix](https://github.com/mcabral5/SLAC-Project-Info/blob/main/cameraDistortion.txt)
+
