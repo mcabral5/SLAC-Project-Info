@@ -68,6 +68,8 @@ RoboDK is a very user-friendly robot software that is used to accurately place v
 
 For ease of the user, it is benificial to import all fiducial markers to roboDK and create the targets in the area. This way, simulated programs can be run to view the robot's path without running the actual python script. Creating targets prior to the python script will also make the robot movements simpiler as well. 
 
+##### Example of RoboDK station from CSU, Chico Expo Demo [here](https://github.com/mcabral5/SLAC-Project-Info/blob/main/CSU%20Expo%20Station.rdk).
+
 ### 5. RoboDK Python
 In order to run a python script with robodk, add a python script and edit it inside robodk. All items in the RoboDK station can be defined using the following code, depending on item type ([Source](https://robodk.com/doc/en/PythonAPI/robodk.html#robolink-py)):
 
