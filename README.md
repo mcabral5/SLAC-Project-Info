@@ -50,7 +50,7 @@ C:\Users\PoThe\OneDrive\Desktop\Mako Camera Code>python calibcapture.py
 The user will be prompted how many images that they would like capture, enter only numeric values. Once the quantity is inputted, press the 'enter' key to move forward. The camera frame will be displayed, then press 'enter' to capture an image. The viewing window will close and the capture framed will be displayed for a short time before the capturing window reopens. 
 After all images are captured, they will be stored in 'C:\Users\PoThe\OneDrive\Desktop\Mako Camera Code\Calibration Images', and the user may move onto the second script. The below image shows what the user should see when prompted to capture an image.
 
-[!capture image](https://github.com/mcabral5/SLAC-Project-Info/blob/main/capturecalib.py%20Results%202.png)
+![capture image](https://github.com/mcabral5/SLAC-Project-Info/blob/main/capturecalib.py%20Results%202.png)
 
 #### cameracalib.py
 'cameracalib.py' is a python script created to calibrate the captured images from the previous script. This method is the same as OpenCV's camera calibration documentation found [here](https://docs.opencv.org/4.x/dc/dbb/tutorial_py_calibration.html).
