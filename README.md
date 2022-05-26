@@ -131,5 +131,8 @@ O1_X1 = O1M1_Base*transl(O1M1_Xray) # Target with respect to base
 There are several python examples with RoboDK [here](https://robodk.com/doc/en/PythonAPI/index.html). 
 
 ### Connecting to Robot
+To connect the robot to RoboDK, the UR5e must be in 'Remote' mode on the teaching pendant. There are two modes: 'Local' and 'Remote'. To change the mode, press the icon on the upper right of the tablet screen (shown in the figure below).
+
+![UR Pendant Local and Remote Icon]("C:\Users\PoThe\Downloads\disable_tp_02.png")
 ![RoboDK Pinging Robot](https://github.com/mcabral5/SLAC-Project-Info/blob/main/RoboDK%20ping%20robot.png)
 
