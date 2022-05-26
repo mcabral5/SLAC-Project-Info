@@ -34,6 +34,13 @@ Camera and lens calibration must be completed whenever any of the following item
 At least 9 images are requried to properly calibrate a camera/lens combination, however, it is recommended to take up to 30 images. The images taken will be of the calibration board (7x11 checkerboard) in various orientations that still allow the board to be within the focal distance of the frame. The recommened method of capturing these images is to keep the camera mounted to the robot and create a simple program on the UR tablet to move the camera around the calibration board. The board should be completely flat when taking calibration images. Please see the UR5e manual on how to create a program using the provided tablet (or click [here](https://github.com/mcabral5/SLAC-Project-Info/blob/main/UR5e_User_Manual.pdf)). 
 When creating this robot program, it is important to have the 'Vimba Viewer' open so that no movements cut off or blur the calibration boards in the camera's field of view. Once this program is completed, run the program constantly at 3-9% speed.
 
+The following figures shows an example of the various positions that the board should be placed when creating the calibration program.
+
+![vimba 1](https://github.com/mcabral5/SLAC-Project-Info/blob/main/Vimba%20Calib%201.png)
+![vimba 2](https://github.com/mcabral5/SLAC-Project-Info/blob/main/Vimba%20Calib%203.png)
+![vimba 3](https://github.com/mcabral5/SLAC-Project-Info/blob/main/Vimba%20Calib%204.png)
+![vimba 4](https://github.com/mcabral5/SLAC-Project-Info/blob/main/Vimba%20Calib%202.png)
+
 Open the computer's command prompt and navigate to the location of the 'calibcapture.py' file (C:\Users\PoThe\OneDrive\Desktop\Mako Camera Code). Run the code. 
 ```
 C:\Users\PoThe>
@@ -41,7 +48,9 @@ C:\Users\PoThe>cd C:\Users\PoThe\OneDrive\Desktop\Mako Camera Code
 C:\Users\PoThe\OneDrive\Desktop\Mako Camera Code>python calibcapture.py
 ```
 The user will be prompted how many images that they would like capture, enter only numeric values. Once the quantity is inputted, press the 'enter' key to move forward. The camera frame will be displayed, then press 'enter' to capture an image. The viewing window will close and the capture framed will be displayed for a short time before the capturing window reopens. 
-After all images are captured, they will be stored in 'C:\Users\PoThe\OneDrive\Desktop\Mako Camera Code\Calibration Images', and the user may move onto the second script.
+After all images are captured, they will be stored in 'C:\Users\PoThe\OneDrive\Desktop\Mako Camera Code\Calibration Images', and the user may move onto the second script. The below image shows what the user should see when prompted to capture an image.
+
+[!capture image](https://github.com/mcabral5/SLAC-Project-Info/blob/main/capturecalib.py%20Results%202.png)
 
 #### cameracalib.py
 'cameracalib.py' is a python script created to calibrate the captured images from the previous script. This method is the same as OpenCV's camera calibration documentation found [here](https://docs.opencv.org/4.x/dc/dbb/tutorial_py_calibration.html).
@@ -56,7 +65,9 @@ C:\Users\PoThe\OneDrive\Desktop\Mako Camera Code>python cameracalib.py
 Once the code is ran, the captured images will be shown on the screen with calibration lines drawn at the edges. The code will run through all images and will prompt you to choose to accept or decline the image if it is able to detect all corners or it will display that the image was a 'bad image'. Press 'enter' to accept the image and 'esc' to decline the image if the calibration quality it not good.
 
 After calibration is complete, the camera matrix and distortion matrix will be shown and saved as text files, a bad image will be reimaged and stored as calib result, and the calibration error will be shown. Calibration error should be as low as possible. 
-It is recommended to move the camera matrix and distortion matrix into a separate folder so that it will not be accidentally deleted. Once completed, copy and paste both the camera and distortion matrices to the main folder 'Mako Camera Code' so that they can be accessed when using the measurement code.
+It is recommended to move the camera matrix and distortion matrix into a separate folder so that it will not be accidentally deleted. Once completed, copy and paste both the camera and distortion matrices to the main folder 'Mako Camera Code' so that they can be accessed when using the measurement code. Below, shows the results of the cameracalib.py code.
+
+![Cameracalib](https://github.com/mcabral5/SLAC-Project-Info/blob/main/cameracalib.py%20Results.png)
 
 ##### Example of [CameraDistortion File](https://github.com/mcabral5/SLAC-Project-Info/blob/main/cameraDistortion.txt). Example of [CameraMatrix](https://github.com/mcabral5/SLAC-Project-Info/blob/main/cameraMatrix.txt)
 
