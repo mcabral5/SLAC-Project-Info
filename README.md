@@ -1,14 +1,14 @@
 # Table of Contents
-## [1. Introduction](#-1.-introduction)
+## [1. Introduction](#1.-introduction)
 ## [2. Camera Calibration](#-2.-camera-calibration)
 ## [3. Aruco Marker Measurements](#-3.-aruco-marker-measurements)
 ## 4. RoboDK Station
 ## 5. RoboDK Python
 
-### 1. Introduction
+### [1. Introduction]
 This respository is for the Spatial Alignment with Machine Vision Robot sponsored by the Stanford Linear Accelerator Center, constructed by CSU, Chico Senior Capstone Team.The main components of the project utilize Python, OpenCV, RoboDK, Vimba Python, and Aruco Libraries. There are several protocals that must be followed in order to successfully run the protoype project. 
 
-### 2. Camera Calibration
+### [2. Camera Calibration]
 Camera and lens calibration must be completed whenever any of the following items are altered:
 - Camera Lens
 - Lens Appeture
@@ -58,7 +58,7 @@ It is recommended to move the camera matrix and distortion matrix into a separat
 
 ##### Example of [CameraDistortion File](https://github.com/mcabral5/SLAC-Project-Info/blob/main/cameraDistortion.txt). Example of [CameraMatrix](https://github.com/mcabral5/SLAC-Project-Info/blob/main/cameraMatrix.txt)
 
-### 3. ArUco Marker Measurements
+### [3. ArUco Marker Measurements]
 Marker measurements are done inside the RoboDK script, however it is important to note the size of the marker. Insert the size of the marker in mm as the 'actual_size' variable in the roboDk python script. 
 
 Two sets of marker measurements are provided. The first is the xyz rpy of the marker with respect to the camera frame. The second set is derived from the marker's eurler angles to get the camera's position with respect to the marker frame. This is the set of coordinates use in the transformation to get the marker's xyz coordinates with respect to the robot base. In order to properly utilize these measurements in the transformation, the x coordinate of the camera with respect to the marker must be flipped to retrieve the marker's position with repsect to the camera. So, from the displayed coordinates, the coordinates of interest are the third from the top 'Camera Position'. 
