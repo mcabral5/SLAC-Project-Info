@@ -1,11 +1,11 @@
 # Table of Contents
-## [1. Introduction](#1.-introduction)
+## [Introduction](#introduction)
 ## [2. Camera Calibration](#2.-camera-calibration)
 ## [3. Aruco Marker Measurements](#3.-aruco-marker-measurements)
 ## 4. RoboDK Station
 ## 5. RoboDK Python
 
-### [1. Introduction]
+### [Introduction]
 This respository is for the Spatial Alignment with Machine Vision Robot sponsored by the Stanford Linear Accelerator Center, constructed by CSU, Chico Senior Capstone Team.The main components of the project utilize Python, OpenCV, RoboDK, Vimba Python, and Aruco Libraries. There are several protocals that must be followed in order to successfully run the protoype project. 
 
 ### [2. Camera Calibration]
