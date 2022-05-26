@@ -133,6 +133,19 @@ There are several python examples with RoboDK [here](https://robodk.com/doc/en/P
 ### Connecting to Robot
 To connect the robot to RoboDK, the UR5e must be in 'Remote' mode on the teaching pendant. There are two modes: 'Local' and 'Remote'. To change the mode, press the icon on the upper right of the tablet screen (shown in the figure below).
 
-![UR Pendant Local and Remote Icon]("C:\Users\PoThe\Downloads\disable_tp_02.png")
+![UR Pendant Local and Remote Icon](https://github.com/mcabral5/SLAC-Project-Info/blob/main/disable_tp_02.png)
+
+Once the robot is in remote mode, the robot can then be connected via RoboDK. From the RoboDK page navigate to Connect>Connect to Robot. A side screen will open where the user can ping the robot to test if the connection is successful. This can be done by pressing the 'ping' button. The following image shows the result of a successful connection. 
 ![RoboDK Pinging Robot](https://github.com/mcabral5/SLAC-Project-Info/blob/main/RoboDK%20ping%20robot.png)
+
+If connection fails, then ensure that the emergency stop is not pressed, all ethernet cables are connected (robot controller to PoE and computer to PoE), and that the robot's IP address is correctly inputted. The user may check the robot's IP address on the teaching pendant under 'settings'. Also, ensure that the correct driver is selected for the UR robot. This can be checked on the same 'Connection to UR5e' side-bar under More Options>Driver
+
+![RoboDK Selecting Driver](https://github.com/mcabral5/SLAC-Project-Info/blob/main/RoboDK%20apiUR%201.png)
+
+Ensure that 'apiur' is selected.
+
+![RoboDK APIUR](https://github.com/mcabral5/SLAC-Project-Info/blob/main/RoboDK%20apiUR.png)
+
+If the ping is successful, then connect to the robot. Once the identification bar turns green, then the user is connected. 
+
 
