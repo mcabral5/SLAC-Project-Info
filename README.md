@@ -131,3 +131,5 @@ O1_X1 = O1M1_Base*transl(O1M1_Xray) # Target with respect to base
 There are several python examples with RoboDK [here](https://robodk.com/doc/en/PythonAPI/index.html). 
 
 ### Connecting to Robot
+![RoboDK Pinging Robot](RoboDK ping robot.jpg)
+
