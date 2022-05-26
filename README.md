@@ -6,6 +6,7 @@
 ### [4.1. RoboDK Station](#robodk-station)
 ### [4.2. RoboDK Python](robodk-python)
 ### [4.3. Connecting to Robot](#connecting-to-robot)
+## [5. Final System Setup](#final-system-setup)
 
 ## Introduction
 This respository is for the Spatial Alignment with Machine Vision Robot sponsored by the Stanford Linear Accelerator Center, constructed by CSU, Chico Senior Capstone Team.The main components of the project utilize Python, OpenCV, RoboDK, Vimba Python, and Aruco Libraries. There are several protocals that must be followed in order to successfully run the protoype project. 
@@ -158,5 +159,8 @@ Ensure that 'apiur' is selected.
 ![RoboDK APIUR](https://github.com/mcabral5/SLAC-Project-Info/blob/main/RoboDK%20apiUR.png)
 
 If the ping is successful, then connect to the robot. Once the identification bar turns green, then the user is connected. 
+
+## Final System Setup
+For the Final System Setup, ensure that all ethernet cables are connected. This requires all four PoE communication ports being filled with both cameras, to the robot controller, and to the computer.
 
 
