@@ -1,7 +1,7 @@
 # Table of Contents
-## [1. Introduction](###-1.-introduction)
-## [2. Camera Calibration](###-2.-camera-calibration)
-## [3. Aruco Marker Measurements](###-3.-aruco-marker-measurements)
+## [1. Introduction](#1.-introduction)
+## [2. Camera Calibration](#2.-camera-calibration)
+## [3. Aruco Marker Measurements](#3.-aruco-marker-measurements)
 ## 4. RoboDK Station
 ## 5. RoboDK Python
 
