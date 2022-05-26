@@ -1,9 +1,9 @@
 # Table of Contents
-## [1. Introduction](#1-introduction)
+## [1. Introduction](#introduction)
 ## [2. Camera Calibration](#camera-calibration)
-## [3. Aruco Marker Measurements](#3.-aruco-marker-measurements)
-## 4. RoboDK Station
-## 5. RoboDK Python
+## [3. Aruco Marker Measurements](#aruco-marker-measurements)
+## [4. RoboDK Station](#robodk-station)
+## [5. RoboDK Python](robodk-python)
 
 ### 1. Introduction
 This respository is for the Spatial Alignment with Machine Vision Robot sponsored by the Stanford Linear Accelerator Center, constructed by CSU, Chico Senior Capstone Team.The main components of the project utilize Python, OpenCV, RoboDK, Vimba Python, and Aruco Libraries. There are several protocals that must be followed in order to successfully run the protoype project. 
@@ -58,19 +58,19 @@ It is recommended to move the camera matrix and distortion matrix into a separat
 
 ##### Example of [CameraDistortion File](https://github.com/mcabral5/SLAC-Project-Info/blob/main/cameraDistortion.txt). Example of [CameraMatrix](https://github.com/mcabral5/SLAC-Project-Info/blob/main/cameraMatrix.txt)
 
-### [3. ArUco Marker Measurements]
+### ArUco Marker Measurements
 Marker measurements are done inside the RoboDK script, however it is important to note the size of the marker. Insert the size of the marker in mm as the 'actual_size' variable in the roboDk python script. 
 
 Two sets of marker measurements are provided. The first is the xyz rpy of the marker with respect to the camera frame. The second set is derived from the marker's eurler angles to get the camera's position with respect to the marker frame. This is the set of coordinates use in the transformation to get the marker's xyz coordinates with respect to the robot base. In order to properly utilize these measurements in the transformation, the x coordinate of the camera with respect to the marker must be flipped to retrieve the marker's position with repsect to the camera. So, from the displayed coordinates, the coordinates of interest are the third from the top 'Camera Position'. 
 
-### 4. RoboDK Station
+### RoboDK Station
 RoboDK is a very user-friendly robot software that is used to accurately place various robot target positions throughout a 3D space. In order to fully utilize this project, all objects must be percisly placed inside of a RoboDK station as they are in the physical world. Any deviation will result in inaccurate results. RoboDK has some excellent documentation for beginning with the program [here](https://www.youtube.com/c/RoboDK3D/playlists).
 
 For ease of the user, it is benificial to import all fiducial markers to roboDK and create the targets in the area. This way, simulated programs can be run to view the robot's path without running the actual python script. Creating targets prior to the python script will also make the robot movements simpiler as well. 
 
 ##### Example of RoboDK station from CSU, Chico Expo Demo [here](https://github.com/mcabral5/SLAC-Project-Info/blob/main/CSU%20Expo%20Station.rdk).
 
-### 5. RoboDK Python
+### RoboDK Python
 In order to run a python script with robodk, add a python script and edit it inside robodk. All items in the RoboDK station can be defined using the following code, depending on item type ([Source](https://robodk.com/doc/en/PythonAPI/robodk.html#robolink-py)):
 
 ```
