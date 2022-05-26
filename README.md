@@ -1,5 +1,5 @@
 # Table of Contents
-## [1. Introduction](#1.-introduction)
+## [1. Introduction](#1-introduction)
 ## [2. Camera Calibration](#camera-calibration)
 ## [3. Aruco Marker Measurements](#3.-aruco-marker-measurements)
 ## 4. RoboDK Station
